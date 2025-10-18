@@ -1,61 +1,164 @@
-# 🧠 Microsoft 365 Security Lab
+# 🧩 Microsoft 365 Security Lab
 
-**End-to-end Microsoft 365 security lab demonstrating identity protection, endpoint defense, and incident detection.**
+### 👨🏽‍💻 Author
+**Mohamud Elmi**  
+BSc Cybersecurity & Digital Forensics  
+Building practical cybersecurity labs that bridge academic theory with enterprise-grade technical execution.  
+[LinkedIn](https://www.linkedin.com/in/mohamud-elmi/) • [GitHub](https://github.com/Mohamud-Elmi/)
 
----
+### Overview
+This repository showcases a complete **Microsoft 365 Security Implementation Lab**, built to simulate how a small organization can deploy enterprise-grade protection using **Microsoft Intune**, **Defender for Business**, and **Entra ID**.  
 
-## 🎯 Objective
+The project demonstrates how identity, device, and endpoint security integrate under the **Zero Trust architecture**, guided by Microsoft’s security principles and the NIST Cybersecurity Framework (Identify → Protect → Detect → Respond → Recover).  
 
-This project documents a complete hands-on deployment of **Microsoft 365 Business Premium**, focused on **Microsoft Entra ID**, **Intune**, and **Defender for Business**.
-It was built to simulate how a real security engineer configures and manages a secure, compliant Microsoft 365 environment — following the principles of **Zero Trust** and **least privilege**.
-
----
-
-## 🧩 Key Focus Areas
-
-* 🔐 **Identity & Access Management** — MFA, Conditional Access, and Dynamic Groups using Entra ID.
-* 💻 **Device Management** — Intune baselines, compliance policies, and device enrollment.
-* 🛡️ **Endpoint Protection** — Defender for Business (AV, Firewall, ASR, Tamper Protection).
-* 🧠 **Threat Detection & Response** — EDR, Vulnerability Management, and incident remediation.
-* 🌐 **Web & Phishing Defense** — SmartScreen, Enhanced Phishing Protection, and Web Content Filtering.
-* 🧾 **Documentation & Reporting** — Secure Score tracking and professional reporting templates.
+All configurations were deployed and verified in a **Microsoft 365 Business Premium** environment with managed **Windows 11 virtual machines**.
 
 ---
 
-## 🧱 Structure
+## 🔑 Lab Focus Areas
 
-| File / Folder     | Description                                            |
-| ----------------- | ------------------------------------------------------ |
-| `README.md`       | This file — overview and key project info.             |
-| `LabBlueprint.md` | Full technical breakdown of each configuration phase.  |
-| `/Evidence/`      | Screenshots and proof of each phase completed.         |
-| `/Documents/`     | Templates, reports, and standard operating procedures. |
+### 🔐 Identity & Access Management
+Configuration of **Microsoft Entra ID (Azure AD)** to enforce strong identity controls and contextual access.  
+**Key concepts applied:**
+- **Zero Trust** → never trust, always verify  
+- **Least privilege access** → Role-Based Access Control (RBAC)  
+- **Defense in depth** → layered authentication policies  
+- **Conditional Access** → enforcing sign-in rules based on risk and device compliance  
 
----
+**Implemented controls:**
+- Multi-Factor Authentication (MFA)  
+- Device-based Conditional Access  
+- Dynamic groups for automated onboarding  
+- Role delegation with built-in Entra roles  
 
-## 🧠 Skills Demonstrated
+**References:**
+- [Microsoft Learn – Identity & Access Management fundamentals](https://learn.microsoft.com/en-us/training/modules/describe-identity-concepts/)  
+- [Zero Trust identity pillar – Microsoft Security](https://learn.microsoft.com/en-us/security/zero-trust/identity)  
 
-* Microsoft Entra ID configuration (roles, MFA, Conditional Access)
-* Intune device management (security baselines, compliance, app protection)
-* Microsoft Defender for Business configuration and tuning
-* EDR / Auto-Remediation testing
-* Security reporting and documentation practices
-* Applying **Zero Trust** and **least privilege** principles in a live environment
-
----
-
-## 🧩 Notes
-
-This lab was built entirely in a **sandbox tenant** with a **Windows 11 virtual machine** enrolled in Intune.
-No client data or production systems were used — this is a purely educational and demonstrative environment for cybersecurity learning and portfolio development.
+**Goal:** Establish a secure identity perimeter that adapts to user risk and device health.  
 
 ---
 
-## 💼 Author
+### 💻 Device Management
+Centralized management of Windows 11 endpoints using **Microsoft Intune** and the **Windows Security Baseline** to enforce compliance and configuration policies.  
 
-**Name:** *Mohamud Elmi*
-**Role:** Cybersecurity Graduate / SOC Analyst in Training
-**LinkedIn:** *https://www.linkedin.com/in/mohamud-elmi/*
-**GitHub:** *https://github.com/Mohamud-Elmi*
+**Key concepts applied:**
+- **Hardening** through baselines and compliance policies  
+- **Configuration drift prevention**  
+- **Continuous assessment** using compliance states and reporting  
+- **Security posture visibility** through Intune and Secure Score  
+
+**Implemented controls:**
+- Security Baseline deployment (Windows 10/11)  
+- Compliance policies with conditional access enforcement  
+- Device encryption, BitLocker, and Firewall monitoring  
+- Automated remediation of non-compliant endpoints  
+
+**References:**
+- [Microsoft Endpoint Manager documentation](https://learn.microsoft.com/en-us/mem/intune/fundamentals/what-is-intune)  
+- [CIS Microsoft 365 Benchmark Guidelines](https://www.cisecurity.org/benchmark/microsoft_365)  
+
+**Goal:** Ensure only compliant and hardened devices connect to corporate resources.
 
 ---
+
+### 🛡️ Endpoint Protection
+Integration of **Microsoft Defender for Business** and **Defender for Endpoint** to secure endpoints with AI-driven protection, tamper prevention, and centralized management.  
+
+**Key concepts applied:**
+- **Defense-in-depth** endpoint architecture  
+- **Attack Surface Reduction (ASR)**  
+- **Firewall and threat protection baselines**  
+- **Tamper Protection and automated remediation**  
+
+**Implemented controls:**
+- Real-time protection, behavior monitoring, and cloud protection  
+- Defender Firewall configuration with logging  
+- Tamper Protection enabled across endpoints  
+- Endpoint onboarding through Intune and Defender portal  
+
+**References:**
+- [Microsoft Defender for Endpoint documentation](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/)  
+- [Attack Surface Reduction (ASR) overview](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/attack-surface-reduction-rules-reference)  
+
+**Goal:** Provide unified endpoint protection and visibility into threats through Defender’s central console.
+
+---
+
+### 🧠 Threat Detection & Response
+Validation of **Defender for Endpoint’s** threat detection, alerting, and investigation capabilities through simulated malware incidents.  
+
+**Key concepts applied:**
+- **Threat intelligence correlation**  
+- **Incident response lifecycle** (Detection → Analysis → Containment → Eradication → Recovery)  
+- **SIEM/SOAR integration fundamentals**  
+- **Forensic evidence tracking**  
+
+**Implemented controls:**
+- EICAR malware simulation to trigger incident alerts  
+- Endpoint investigation and automated quarantine  
+- Analysis of threat timeline, assets, and incident graphs  
+- Review of evidence logs in the Defender portal  
+
+**References:**
+- [NIST SP 800-61 – Computer Security Incident Handling Guide](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf)  
+- [Microsoft Defender for Endpoint Investigation process](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/investigate-alerts)  
+
+**Goal:** Demonstrate proactive detection and response capabilities within the Microsoft 365 security ecosystem.
+
+---
+
+### 🌐 Web & Phishing Defense
+Implementation of **Microsoft Defender SmartScreen**, **Network Protection**, and **Enhanced Phishing Protection** through Intune and Defender for Business.  
+
+**Key concepts applied:**
+- **Phishing defense and credential theft mitigation**  
+- **DNS and URL-based content filtering**  
+- **Browser isolation and risk categorization**  
+- **User-centric defense mechanisms**  
+
+**Implemented controls:**
+- SmartScreen and Network Protection (block mode)  
+- Enhanced phishing protection and password reuse detection  
+- Web content filtering in Microsoft 365 Defender  
+- Verification via phishing demo site and blocked download tests  
+
+**References:**
+- [Microsoft Defender SmartScreen overview](https://learn.microsoft.com/en-us/microsoft-edge/deploy/smartscreen)  
+- [Web Threat Protection in Defender for Endpoint](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/web-protection-overview)  
+
+**Goal:** Prevent credential phishing, drive-by downloads, and malicious domain access.
+
+---
+
+## 🧾 Future Expansion
+📈 **Documentation & Reporting:**  
+Planned addition of Secure Score analysis, Intune compliance reports, and Defender exposure dashboards to visualize the organization’s evolving security posture.
+
+---
+
+### 🧰 Tools & Environment
+- Microsoft 365 Business Premium tenant  
+- Intune (Endpoint Manager)  
+- Microsoft Defender for Business / Endpoint  
+- Microsoft Entra ID (Azure AD)  
+- Windows 11 Pro Virtual Machine (VirtualBox)  
+
+---
+
+### 🧩 Repository Structure
+📂 microsoft-365-security-lab
+┣ 📂 Identity & Access Management
+┣ 📂 Device Management
+┣ 📂 Endpoint Protection
+┣ 📂 Threat Detection & Response
+┣ 📂 Web & Phishing Defense
+┣ 📜 LabBlueprint.md
+┗ 📜 README.md
+
+---
+
+### 💬 Summary
+This lab demonstrates a complete Microsoft 365 security ecosystem aligned with **Zero Trust principles**.  
+It showcases the full journey — from identity governance to endpoint hardening and threat response — validating my understanding of modern **blue team**, **cloud administration**, and **cyber defense operations**.
+
